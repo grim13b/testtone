@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'grim3lt'
+__author__ = 'grim3lt.org'
 import numpy
 import struct
 
@@ -71,5 +71,5 @@ def main():
 
             sw.write_header(fp, 96000, 16)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
