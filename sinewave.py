@@ -67,9 +67,10 @@ def main():
             sw.offset_header(fp)
 
             for freq in range(track[0], track[1], track[2]):
-                sw.write(fp, 0.7, freq, 96000, 16, 3)
+                sw.write(fp, 0.7, freq, 44100, 16, 3)
 
-            sw.write_header(fp, 96000, 16)
+            sw.write_header(fp, 44100, 16)
+
 
 if __name__ == '__main__':
     main()
