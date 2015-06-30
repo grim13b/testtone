@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 __author__ = 'grim3lt.org'
 import numpy
 import struct
@@ -48,6 +49,13 @@ class SineWaveCreator:
 
 
 def main():
+    # サンプリング周波数です。 44100 や 96000 などを入力してください。
+    fs = 192000
+
+    # ビット深度は 16 bit 固定です。
+    bitDepth = 16
+
+    # [StartFreq, EndFreq, StepFreq]
     album = [
         [10, 200, 10],
         [200, 2000, 100],
@@ -67,9 +75,9 @@ def main():
             sw.offset_header(fp)
 
             for freq in range(track[0], track[1], track[2]):
-                sw.write(fp, 0.7, freq, 44100, 16, 3)
+                sw.write(fp, 0.7, freq, fs, bitDepth, 3)
 
-            sw.write_header(fp, 44100, 16)
+            sw.write_header(fp, fs, bitDepth)
 
 
 if __name__ == '__main__':
